@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.1.9</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>com.ejian</groupId>
+  <artifactId>ejian</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <packaging>pom</packaging>
+
+  <properties>
+    <java.version>17</java.version>
+    <mybatis-plus.version>3.5.5</mybatis-plus.version>
+    <io.jsonwebtoken.version>0.11.5</io.jsonwebtoken.version>
+    <javax.xml.bind.version>2.3.1</javax.xml.bind.version>
+    <springdoc.version>2.0.2</springdoc.version>
+    <knife4j.version>4.1.0</knife4j.version>
+    <servlet.version>3.0.1</servlet.version>
+    <pay.version>1.0-SNAPSHOT</pay.version>
+    <pinyin.version>2.5.0</pinyin.version>
+    <easyexcel.version>3.3.2</easyexcel.version>
+    <kafka.version>3.6.0</kafka.version>
+    <fastjson.version>2.0.24</fastjson.version>
+    <spring.kafa.version>3.0.12</spring.kafa.version>
+    <rocketmq.client.version>5.0.5</rocketmq.client.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <!--mybatis plus-->
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatis-plus.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-generator</artifactId>
+        <version>${mybatis-plus.version}</version>
+      </dependency>
+
+      <!--jwt-->
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>${io.jsonwebtoken.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-impl</artifactId>
+        <version>${io.jsonwebtoken.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-jackson</artifactId>
+        <version>${io.jsonwebtoken.version}</version>
+      </dependency>
+
+      <!--fastjson-->
+      <dependency>
+        <groupId>com.alibaba.fastjson2</groupId>
+        <artifactId>fastjson2</artifactId>
+        <version>${fastjson.version}</version>
+      </dependency>
+
+      <!--knife4j 文档依赖-->
+      <dependency>
+        <groupId>com.github.xiaoymin</groupId>
+        <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+        <version>${knife4j.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- 谷歌身份验证器使用，后面可能不需要依赖，看情况 -->
+      <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>1.15</version>
+      </dependency>
+
+
+      <!--汉字转拼音工具包-->
+      <dependency>
+        <groupId>com.belerweb</groupId>
+        <artifactId>pinyin4j</artifactId>
+        <version>${pinyin.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>easyexcel</artifactId>
+        <version>${easyexcel.version}</version>
+      </dependency>
+
+      <!-- rocketMQ -->
+      <dependency>
+        <groupId>org.apache.rocketmq</groupId>
+        <artifactId>rocketmq-client-java</artifactId>
+        <version>${rocketmq.client.version}</version>
+      </dependency>
+
+      <!--自身项目依赖-->
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>ejian-core</module>
+    <module>ejian-system</module>
+  </modules>
+
+</project>
