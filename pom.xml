@@ -22,7 +22,7 @@
     <io.jsonwebtoken.version>0.11.5</io.jsonwebtoken.version>
     <javax.xml.bind.version>2.3.1</javax.xml.bind.version>
     <springdoc.version>2.0.2</springdoc.version>
-    <knife4j.version>4.1.0</knife4j.version>
+    <knife4j.version>4.5.0</knife4j.version>
     <servlet.version>3.0.1</servlet.version>
     <pay.version>1.0-SNAPSHOT</pay.version>
     <pinyin.version>2.5.0</pinyin.version>
@@ -78,12 +78,6 @@
         <groupId>com.github.xiaoymin</groupId>
         <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
         <version>${knife4j.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-          </exclusion>
-        </exclusions>
       </dependency>
 
       <!-- 谷歌身份验证器使用，后面可能不需要依赖，看情况 -->
